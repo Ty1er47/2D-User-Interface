@@ -15,6 +15,7 @@ public class Target : MonoBehaviour
         _targerRb = GetComponent<Rigidbody2D>();
 
         _targerRb.AddForce(Vector2.up * MinSpeed, ForceMode2D.Impulse);
+         _targerRb.AddTorque(MaxTorque);
     }
 
     // Update is called once per frame
@@ -22,4 +23,8 @@ public class Target : MonoBehaviour
     {
         
     }
+ private float RandomizeForce()
+ {
+     return Random.Range(MinSpeed, MaxSpeed);
+ }
 }
